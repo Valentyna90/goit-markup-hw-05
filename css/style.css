@@ -856,7 +856,14 @@ img {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  transform: opacity var(--anim-time), visibility var(--cubik);
+
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: none;
+
+  transition: opasity var(--anim-time), visibility var(--cubik);
+  /* transform: opacity var(--anim-time), visibility var(--cubik); */
 }
 
 .backdrop.is-hidden {
@@ -876,18 +883,19 @@ img {
   border-radius: 4px;
 
   transform: translate(-50%, -50%);
-  transition: transform var(--cubik);
 }
 .close-btn {
   position: absolute;
   top: 6px;
   right: 6px;
+  width: 30px;
+  height: 30px;
 
   border-radius: 50%;
   cursor: pointer;
 }
-
+/* 
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.9);
   transition: transform var(--cubik);
-}
+} */
