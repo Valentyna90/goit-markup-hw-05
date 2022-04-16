@@ -11,7 +11,6 @@
     0px 2px 2px rgba(0, 0, 0, 0.12);
 
   --anim-time: 250ms;
-  --cubik: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -860,10 +859,9 @@ img {
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
   visibility: visible;
-  pointer-events: none;
+  pointer-events: initial;
 
-  transition: opasity var(--anim-time), visibility var(--cubik);
-  /* transform: opacity var(--anim-time), visibility var(--cubik); */
+  transition: opasity var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
@@ -879,23 +877,31 @@ img {
   top: 50%;
   left: 50%;
 
-  background-color: var(--primary-white-color);
+  background-color: rgba(255, 255, 255, 1);
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px;
+
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 
   transform: translate(-50%, -50%);
 }
+
 .close-btn {
-  position: absolute;
   top: 6px;
   right: 6px;
   width: 30px;
   height: 30px;
 
+  align-items: center;
+
   border-radius: 50%;
   cursor: pointer;
 }
-/* 
+
 .backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0.9);
-  transition: transform var(--cubik);
-} */
+  transform: translate(-50%, -50%), scale(0.5);
+  transition: transform var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+}
