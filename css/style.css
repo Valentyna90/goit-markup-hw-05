@@ -98,9 +98,6 @@ img {
 .accent-black {
   color: var(--title-color);
 }
-/* .logo span {
-  margin-left: 5px;
-} */
 
 .links a,
 .contacts a {
@@ -115,6 +112,7 @@ img {
   margin-right: 50px;
 
   text-decoration: none;
+  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 .links a {
   color: var(--title-color);
@@ -193,7 +191,7 @@ img {
   fill: var(--accent-color);
 }
 
-/* Главная секция */
+/* OVERLAY Главной секции */
 .overlay {
   max-width: 1600px;
   height: 600px;
@@ -373,7 +371,7 @@ img {
   height: 70px;
 
   font-size: 14px;
-  font-weight: 700px;
+  font-weight: 700;
   line-height: calc(16 / 14);
   letter-spacing: 0.03em;
   text-align: center;
@@ -513,7 +511,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--primary-text-color);
+  color: #afb1b8;
   border: 1px solid rgba(175, 177, 184, 1);
   border-radius: 4px;
 
@@ -631,8 +629,7 @@ img {
   padding: 63px 24px;
 
   transform: translateY(101%);
-  transition: transform var(--anim-time);
-  transition-timing-function: var(--cubik);
+  transition: transform var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-picture:hover .picture-thumb-text {
@@ -861,7 +858,8 @@ img {
   visibility: visible;
   pointer-events: initial;
 
-  transition: opasity var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
+    visibility var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
@@ -887,6 +885,8 @@ img {
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 
   transform: translate(-50%, -50%);
+  transition: opacity var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
+    visibility var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn {
@@ -903,5 +903,6 @@ img {
 
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%), scale(0.5);
-  transition: transform var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
+    visibility var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
