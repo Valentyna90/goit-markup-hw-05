@@ -182,6 +182,7 @@ img {
 .contacts .icon {
   align-items: center;
   margin-right: 10px;
+  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-link .icon {
@@ -448,6 +449,9 @@ img {
 }
 .item-social-icon {
   display: flex;
+  outline: 1px solid red;
+
+  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link-social-icon {
   display: flex;
@@ -459,9 +463,11 @@ img {
   background-color: transparent;
 
   border-radius: 50%;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   padding: 0;
   margin: 0;
+
+  /* transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .item-social-icon:not(:last-child) {
@@ -517,6 +523,8 @@ img {
 
   width: 170px;
   height: 92px;
+
+  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-customers {
@@ -543,6 +551,10 @@ img {
   padding: 0px;
   margin-bottom: 50px;
 }
+
+/* .item-button {
+  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+} */
 .item-button:not(:last-child) {
   margin-right: 8px;
 }
@@ -565,6 +577,8 @@ img {
   background-color: #f5f4fa;
   border: 1px solid transparent;
   cursor: pointer;
+
+  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Главная кнопка (активная)*/
 
@@ -739,6 +753,8 @@ img {
   letter-spacing: 0.03em;
 
   color: rgba(255, 255, 255, 0.6);
+
+  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address-list-item .link:hover,
 .address-list-item .link:focus {
@@ -787,6 +803,8 @@ img {
 
   padding: 0;
   margin: 0;
+
+  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icon-social {
