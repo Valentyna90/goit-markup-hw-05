@@ -813,49 +813,7 @@ img {
   fill: #fff;
   background-color: var(--accent-color);
 }
-.backdrop {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 50%;
 
-  transform: translateX(-50%);
-  transition: opacity var(--anim-time), visibility var(--anim-time);
-}
-
-.backdrop.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.modal {
-  position: fixed;
-  width: 528px;
-  height: 581px;
-  top: 50%;
-  left: 50%;
-
-  background-color: var(--primary-white-color);
-  border-radius: 4px;
-
-  transform: translate(-50%, -50%);
-}
-
-.close-btn {
-  position: absolute;
-  top: 6px;
-  right: 5px;
-
-  width: 30px;
-  height: 30px;
-
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  background-color: var(--primary-white-color);
-}
 /* МОДАЛЬНОЕ ОКНО */
 
 .backdrop {
@@ -903,15 +861,17 @@ img {
 }
 
 .close-btn {
+  position: absolute;
   top: 6px;
-  right: 6px;
+  right: 5px;
+
   width: 30px;
   height: 30px;
 
-  align-items: center;
-
   border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  background-color: var(--primary-white-color);
 }
 
 .backdrop.is-hidden .modal {
