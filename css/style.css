@@ -101,6 +101,7 @@ img {
 
 .links a,
 .contacts a {
+  /* outline: 1px solid pink; */
   font-family: inherit;
   font-weight: 500;
   font-size: 14px;
@@ -112,7 +113,8 @@ img {
   margin-right: 50px;
 
   text-decoration: none;
-  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
+    visibility var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 .links a {
   color: var(--title-color);
@@ -151,6 +153,7 @@ img {
 
 .link-current.link {
   position: relative;
+  /* outline: 1px solid blue; */
 }
 
 .link-current.link::after {
@@ -180,9 +183,11 @@ img {
 }
 
 .contacts .icon {
+  /* outline: 1px solid red; */
   align-items: center;
   margin-right: 10px;
-  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
+    visibility var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-link .icon {
@@ -442,7 +447,7 @@ img {
 /* ИКОНКИ СОЦ. СЕТЕЙ  */
 
 .list-social-icon {
-  /* outline: 1px solid red; */
+  /* outline: 1px solid green; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -450,10 +455,9 @@ img {
 .item-social-icon {
   display: flex;
   /* outline: 1px solid red; */
-
-  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link-social-icon {
+  /* outline: 1px solid blue; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -466,6 +470,9 @@ img {
   /* border: 1px solid black; */
   padding: 0;
   margin: 0;
+
+  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
+    visibility var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .item-social-icon:not(:last-child) {
