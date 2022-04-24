@@ -113,14 +113,18 @@ img {
   margin-right: 50px;
 
   text-decoration: none;
-  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
-    visibility var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
+    visibility var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1); */
 }
 .links a {
+  /* outline: 1px solid red; */
   color: var(--title-color);
+  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts a {
+  /* outline: 1px solid blue; */
   color: var(--primary-text-color);
+  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts li:last-child a,
 .links li:last-child a {
@@ -183,11 +187,11 @@ img {
 }
 
 .contacts .icon {
-  /* outline: 1px solid red; */
+  /* outline: 1px solid yellow; */
   align-items: center;
   margin-right: 10px;
-  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
-    visibility var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
+    visibility var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .contacts-link .icon {
@@ -220,7 +224,6 @@ img {
 .hero {
   padding-top: 200px;
   padding-bottom: 200px;
-  /* background-color: #2f303a; */
 }
 
 /* Эффективные решения */
@@ -244,20 +247,26 @@ img {
 
   display: block;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  background: #2196f3;
+  background: var(--accent-color);
   font-size: 16px;
   font-weight: 700;
   line-height: 30px;
   letter-spacing: 0.06em;
   color: #ffffff;
-  border: none;
+  border: 1px solid transparent;
 
   cursor: pointer;
+
+  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
+    background-color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover,
 .hero-button:focus {
+  color: var(--primary-white-color);
   background: #188ce8;
+  box-shadow: var(--box-shadow);
 }
 
 /* ОСОБЕННОСТИ */
@@ -467,7 +476,7 @@ img {
   background-color: transparent;
 
   border-radius: 50%;
-  /* border: 1px solid black; */
+
   padding: 0;
   margin: 0;
 
@@ -480,7 +489,11 @@ img {
 }
 
 .link-social-icon {
+  /* outline: 1px solid green; */
   fill: #afb1b8;
+
+  transition: fill var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
+    visibility var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-social-icon:hover,
@@ -519,6 +532,7 @@ img {
 }
 
 .link-customers {
+  /* outline: 1px solid red; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -529,7 +543,8 @@ img {
   width: 170px;
   height: 92px;
 
-  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
+    border var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-customers {
@@ -580,15 +595,18 @@ img {
   border: 1px solid transparent;
   cursor: pointer;
 
-  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
+    background-color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 /* Главная кнопка (активная)*/
 
 .button:hover,
 .button:focus {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--box-shadow);
 }
 
 /* ПОРТФОЛИО КАРТОЧКИ */
@@ -607,6 +625,11 @@ img {
   flex-basis: calc(100% / 3 - var(--card-set-gap));
   margin-left: var(--card-set-gap);
   margin-top: var(--card-set-gap);
+}
+
+.element {
+  transform: box-shadow;
+  transition: transform var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .element:hover,
@@ -795,28 +818,32 @@ img {
 }
 
 .footer-icon-link {
+  /* outline: 1px solid red; */
   display: flex;
   justify-content: center;
   align-items: center;
   width: 44px;
   height: 44px;
+
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
 
   padding: 0;
   margin: 0;
 
-  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icon-social {
   fill: #fff;
   width: 20px;
   height: 20px;
+
+  /* transition: fill var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .footer-icon-link:hover,
-.footer-icon-link:hover {
+.footer-icon-link:focus {
   fill: #fff;
   background-color: var(--accent-color);
 }
