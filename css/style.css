@@ -11,6 +11,7 @@
     0px 2px 2px rgba(0, 0, 0, 0.12);
 
   --anim-time: 250ms;
+  --cubik: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -77,7 +78,7 @@ img {
 .contacts,
 .header .container {
   display: flex;
-  /* justify-content: space-between; */
+
   list-style: none;
   color: var(--title-color);
 }
@@ -113,18 +114,16 @@ img {
   margin-right: 50px;
 
   text-decoration: none;
-  /* transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
-    visibility var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1); */
 }
 .links a {
   /* outline: 1px solid red; */
   color: var(--title-color);
-  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--anim-time) var(--cubik);
 }
 .contacts a {
   /* outline: 1px solid blue; */
   color: var(--primary-text-color);
-  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--anim-time) var(--cubik);
 }
 .contacts li:last-child a,
 .links li:last-child a {
@@ -142,6 +141,7 @@ img {
 }
 
 .nav {
+  /* outline: 1px solid red; */
   display: flex;
 }
 .contacts {
@@ -177,6 +177,7 @@ img {
 /* SVG */
 
 .contacts .contacts-link {
+  /* outline: 1px solid green; */
   display: flex;
 
   align-items: center;
@@ -186,19 +187,19 @@ img {
   margin-right: 30px;
 }
 
-.contacts .icon {
+.contacts-link .icon {
   /* outline: 1px solid yellow; */
   align-items: center;
   margin-right: 10px;
-  /* transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
-    visibility var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1); */
-}
-
-.contacts-link .icon {
-  fill: #757575;
 }
 .contacts-link:hover .icon {
   fill: var(--accent-color);
+}
+
+.contacts-link .icon {
+  /* outline: 1px solid purple; */
+  fill: #757575;
+  transition: fill var(--anim-time) var(--cubik);
 }
 
 /* OVERLAY Главной секции */
@@ -257,9 +258,9 @@ img {
 
   cursor: pointer;
 
-  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
-    background-color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--anim-time) var(--cubik),
+    background-color var(--anim-time) var(--cubik),
+    box-shadow var(--anim-time) var(--cubik);
 }
 
 .hero-button:hover,
@@ -473,33 +474,36 @@ img {
   width: 44px;
   height: 44px;
 
-  background-color: transparent;
+  background-color: var(--primary-white-color);
 
   border-radius: 50%;
 
   padding: 0;
   margin: 0;
 
-  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
-    visibility var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--anim-time) var(--cubik);
+}
+
+.icon-social {
+  transition: fill var(--anim-time) var(--cubik);
 }
 
 .item-social-icon:not(:last-child) {
   margin-right: 10px;
 }
 
-.link-social-icon {
-  /* outline: 1px solid green; */
-  fill: #afb1b8;
-
-  transition: fill var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
-    visibility var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .link-social-icon:hover,
 .link-social-icon:focus {
   background-color: var(--accent-color);
+}
+
+.link-social-icon:hover .icon-social,
+.link-social-icon:focus .icon-social {
   fill: var(--primary-white-color);
+}
+
+.link-social-icon {
+  fill: #afb1b8;
 }
 
 /* Секция Постоянные Клиенты */
@@ -543,8 +547,8 @@ img {
   width: 170px;
   height: 92px;
 
-  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
-    border var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--anim-time) var(--cubik),
+    border var(--anim-time) var(--cubik);
 }
 
 .icon-customers {
@@ -595,9 +599,9 @@ img {
   border: 1px solid transparent;
   cursor: pointer;
 
-  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
-    background-color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--anim-time) var(--cubik),
+    background-color var(--anim-time) var(--cubik),
+    box-shadow var(--anim-time) var(--cubik);
 }
 
 /* Главная кнопка (активная)*/
@@ -628,8 +632,7 @@ img {
 }
 
 .element {
-  transform: box-shadow;
-  transition: transform var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--anim-time) var(--cubik);
 }
 
 .element:hover,
@@ -668,7 +671,7 @@ img {
   padding: 63px 24px;
 
   transform: translateY(101%);
-  transition: transform var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--anim-time) var(--cubik);
 }
 
 .link-picture:hover .picture-thumb-text {
@@ -779,7 +782,7 @@ img {
 
   color: rgba(255, 255, 255, 0.6);
 
-  transition: color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--anim-time) var(--cubik);
 }
 .address-list-item .link:hover,
 .address-list-item .link:focus {
@@ -831,15 +834,13 @@ img {
   padding: 0;
   margin: 0;
 
-  transition: background-color var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--anim-time) var(--cubik);
 }
 
 .footer-icon-social {
   fill: #fff;
   width: 20px;
   height: 20px;
-
-  /* transition: fill var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .footer-icon-link:hover,
@@ -863,8 +864,8 @@ img {
   visibility: visible;
   pointer-events: initial;
 
-  transition: opacity var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
-    visibility var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--anim-time) var(--cubik),
+    visibility var(--anim-time) var(--cubik);
 }
 
 .backdrop.is-hidden {
@@ -890,8 +891,8 @@ img {
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 
   transform: translate(-50%, -50%);
-  transition: opacity var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
-    visibility var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--anim-time) var(--cubik),
+    visibility var(--anim-time) var(--cubik);
 }
 
 .close-btn {
@@ -910,6 +911,6 @@ img {
 
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%), scale(0.5);
-  transition: opacity var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1),
-    visibility var(--anim-time) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--anim-time) var(--cubik),
+    visibility var(--anim-time) var(--cubik);
 }
